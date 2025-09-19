@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+body {
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    url("https://i.pinimg.com/1200x/c2/4b/68/c24b68b3640b15f4e9a81bcd51907873.jpg") 
+    no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+    .resume-container {
+      max-width: 900px;
+      width: 100%;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #111827;
+      color: #fff;
+      padding: 30px 20px;
+      animation: slideInLeft 1.2s ease forwards;
+    }
+
+    .profile-pic {
+      width: 95%;
+      height: 200px;
+      background: url("WhatsApp Image 2025-09-19 at 16.07.45_cd985a51.jpg") center/cover no-repeat;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #facc15;
+    }
+
+    .section {
+      margin-bottom: 25px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .section:nth-child(1) { animation-delay: 0.3s; }
+    .section:nth-child(2) { animation-delay: 0.5s; }
+    .section:nth-child(3) { animation-delay: 0.7s; }
+
+    .section h3 {
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 2px solid #facc15;
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .section p, .section li {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .skills li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .skills li:hover {
+      color: #facc15;
+    }
+
+    /* Main Content */
+    .main {
+      padding: 30px;
+      animation: slideInRight 1.2s ease forwards;
+    }
+
+    .main h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .main h1 span {
+      font-weight: 400;
+    }
+
+    .highlight {
+      background: #facc15;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    .main .section h3 {
+      color: #111827;
+    }
+
+    .exp-item {
+      margin-bottom: 20px;
+    }
+
+    .exp-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .reference-item {
+      margin-bottom: 10px;
+    }
+
+    /* Interests */
+    .interests {
+      display: flex;
+      gap: 30px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .interests div {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .interests div:hover {
+      transform: translateY(-5px);
+      color: #facc15;
+    }
+
+    /* Resume download button */
+    .btn {
+      display: inline-block;
+      background: #facc15;
+      color: #111827;
+      padding: 10px 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #eab308;
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-top: 15px;
+      border-radius: 6px;
+      background: #000;
+    }
+
+    @media(max-width:900px) {
+      .resume-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile-pic"></div>
+      <div class="name"> </div>
+      <div class="title">Aspiring Full-Stack Developer</div>
+
+      <div class="section">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:josephstevenit@gmail.com" style="color:#facc15;">josephstevenit@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919043409645" style="color:#facc15;">+91-9043409645</a></p>
+        <p>Chennai, Tamil Nadu</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/josephabragam5501/" target="_blank" style="color:#facc15;">Profile_id</a></p>
+        <p>GitHub: <a href="https://github.com/josephstevenit-alt" target="_blank" style="color:#facc15;">profile_id</a></p>
+        <p>Portfolio: <a href="https://tranquil-taffy-599570.netlify.app/" target="_blank" style="color:#facc15;">Website</a></p>
+      </div>
+
+      <div class="section">
+        <h3>Education</h3>
+        <p><strong>B.Tech — Information Technology</strong><br>
+        Bharathidasan Engg College (Anna University)<br>2021–2025 | CGPA: 7.02/10</p>
+        <p>TMS School – XII (Maths & Bio), 2020</p>
+        <p>Dominic Savio School – X, 2018</p>
+      </div>
+
+      <div class="section">
+        <h3>Skills</h3>
+        <ul>
+          <li>Python, JavaScript, HTML, CSS</li>
+          <li>React.js, Django, Tailwind CSS</li>
+          <li>MySQL, DBMS concepts</li>
+          <li>Git, GitHub, VS Code</li>
+          <li>Web3.js (Blockchain Integration)</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <section class="main">
+      <h1>Joseph <span>Fresher</span></h1>
+      <div class="highlight">Full-Stack Developer</div>
+
+      <div class="section">
+        <h3>About Me</h3>
+        <p>Aspiring Full-Stack Developer skilled in React.js, Django, Python, JavaScript, and MySQL. Strong foundation in Data Structures, OOP, and Computer Networks with hands-on blockchain projects. Seeking an entry-level role to grow as a fresher software developer.</p>
+      </div>
+
+      <div class="section">
+        <h3>Projects</h3>
+        <p><strong>Portfolio Website</strong> — <a href="https://tranquil-taffy-599570.netlify.app/" target="_blank">Live Link</a></p>
+        <p><strong>Coffee Shop Website</strong> — <a href="https://josephstevenit-alt.github.io/coffee-project-html-and-css/" target="_blank">Live Link</a></p>
+      </div>
+
+      <div class="section" style="color: black;">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Full Stack Web Development – Besant Technologies (2025)</li>
+          <li>IBM SkillsBuild — <a href="https://josephstevenit-alt.github.io/certificate-IBM-/" target="_blank">Verify</a></li>
+          <li>Scaler – Python Programming — <a href="https://moonshot.scaler.com/s/sl/vWvqIj9tuj" target="_blank">View</a></li>
+          <li>Deloitte – Cyber Job Simulation — <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_68c40a4f81edf82e828b24f1_1757679487718_completion_certificate.pdf" target="_blank">View</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Resume</h3>
+        <a href="Joseph_resume.pdf.pdf" download class="btn">Download Resume</a>
+        <iframe src="Joseph_resume.pdf.pdf"></iframe>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
